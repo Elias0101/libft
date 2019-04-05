@@ -6,22 +6,19 @@
 #    By: smanhack <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/02 18:27:40 by smanhack          #+#    #+#              #
-#    Updated: 2019/04/04 19:41:10 by tkarri           ###   ########.fr        #
+#    Updated: 2019/04/05 15:12:45 by tkarri           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS =  ./srcs/
-INCL = ./
-
-FUNCTION_C = ./srcs/ft_isdigit.c
+FUNCTION_C = *.c
 FUNCTION_O = *.o
 
 all : $(NAME)
 
 $(NAME) :
-	gcc -Wall -Wextra -Werror -I$(INCL) -c $(FUNCTION_C)
+	gcc -Wall -Wextra -Werror -I. -c $(FUNCTION_C)
 	ar rc $(NAME) $(FUNCTION_O)
 	ranlib $(NAME)
 	rm -f $(FUNCTION_O)

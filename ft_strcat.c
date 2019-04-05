@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkarri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 15:37:03 by tkarri            #+#    #+#             */
-/*   Updated: 2019/04/05 14:58:45 by tkarri           ###   ########.fr       */
+/*   Created: 2019/04/05 16:51:59 by tkarri            #+#    #+#             */
+/*   Updated: 2019/04/05 17:01:40 by tkarri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strcat(char *restrict s1, const char *restrict s2)
 {
-	memset(s, 0, n);
+	int i;
+	int j;
+
+	i = ft_strlen(s1);
+	j = 0;
+	while (s2[j] != '\0')
+	{
+		s1[i] = s2[j];
+		i++;
+		j++;
+	}
+	s1[i] = '\0';
+	return (s1);
 }

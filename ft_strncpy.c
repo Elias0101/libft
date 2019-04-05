@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkarri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 15:37:03 by tkarri            #+#    #+#             */
-/*   Updated: 2019/04/05 14:58:45 by tkarri           ###   ########.fr       */
+/*   Created: 2019/04/05 21:19:32 by tkarri            #+#    #+#             */
+/*   Updated: 2019/04/05 21:36:53 by tkarri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,25 @@
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	memset(s, 0, n);
+	char *copy;
+
+	copy = dst;
+	while (*src != '\0')
+	{
+		if (len == 0)
+			return (copy);
+		*dst = *src;
+		dst++;
+		src++;
+		len--;
+	}
+	while (len > 0)
+	{
+		*dst = 0;
+		dst++;
+		len--;
+	}
+	return (copy);
 }
