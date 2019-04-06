@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkarri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 18:29:47 by tkarri            #+#    #+#             */
-/*   Updated: 2019/04/06 17:13:28 by tkarri           ###   ########.fr       */
+/*   Created: 2019/04/06 19:05:10 by tkarri            #+#    #+#             */
+/*   Updated: 2019/04/06 19:27:03 by tkarri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,37 @@
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_itoa(int n)
 {
-	char	*copy;
+	char	*str;
 	int		len;
+	int		n_copy;
+	int		is_minus;
+	int		i;
 
-	len = ft_strlen(s1);
-	copy = (char *)malloc(sizeof(char) * (len + 1));
-	if (copy)
-		return ((char *)(ft_memcpy(copy, s1, (size_t)(len + 1))));
+	is_minus = 0;
+	i = 0;
+	if (n < 0)
+	{
+		is_minus = 1;
+		n *= (-1);
+	}
+	n_copy = n;
+	len = 1;
+	while ((n_copy = n_copy / 10) > 0)
+		len++;
+	str = (char *)malloc(sizeof(char) * (len + 1 + is_minus));
+	if (str)
+	{
+		ft_strclr(str);
+		if (is_minus)
+		{
+			i++;
+			str[0] = '-';
+		}
+		while (n > 9)
+			i++;
+		str[i] = n + '0';
+	}
 	return (NULL);
 }

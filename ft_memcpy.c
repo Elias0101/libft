@@ -6,7 +6,7 @@
 /*   By: tkarri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 16:38:22 by tkarri            #+#    #+#             */
-/*   Updated: 2019/04/04 19:25:31 by tkarri           ###   ########.fr       */
+/*   Updated: 2019/04/06 17:04:20 by tkarri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 		dt++;
 		sr++;
 	}
-	return (dst);
+	return ((void *)dst);
 }

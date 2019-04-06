@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkarri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 15:43:59 by tkarri            #+#    #+#             */
-/*   Updated: 2019/04/06 17:08:54 by tkarri           ###   ########.fr       */
+/*   Created: 2019/04/06 17:18:36 by tkarri            #+#    #+#             */
+/*   Updated: 2019/04/06 18:22:31 by tkarri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+#include <stdlib.h>
+
+#include "libft.h"
+
+void	*ft_memalloc(size_t size)
 {
-	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
-		return (1);
-	else
-		return (0);
+	void *tmp;
+
+	tmp = malloc(size);
+	if (tmp)
+	{
+		ft_bzero(tmp, size);
+		return (tmp);
+	}
+	return (NULL);
 }

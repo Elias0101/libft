@@ -6,7 +6,7 @@
 /*   By: tkarri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 16:03:21 by tkarri            #+#    #+#             */
-/*   Updated: 2019/04/03 16:31:01 by tkarri           ###   ########.fr       */
+/*   Updated: 2019/04/06 17:04:47 by tkarri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (n--)
 	{
 		if (*p1 != *p2)
-			return (*p1 - *p2);
+			return ((int)(*p1 - *p2));
 		p1++;
 		p2++;
 	}

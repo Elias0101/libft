@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tkarri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 15:43:59 by tkarri            #+#    #+#             */
-/*   Updated: 2019/04/06 17:08:54 by tkarri           ###   ########.fr       */
+/*   Created: 2019/04/06 19:41:23 by tkarri            #+#    #+#             */
+/*   Updated: 2019/04/06 19:59:02 by tkarri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalpha(int c)
+#include "libft.h"
+
+char	*ft_strnew(size_t size)
 {
-	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
-		return (1);
-	else
-		return (0);
+	char *new;
+
+	new = (char *)ft_memalloc(size);
+	if (new)
+	{
+		ft_bzero((void *)new, size);
+		return (new);
+	}
+	return (NULL);
 }
