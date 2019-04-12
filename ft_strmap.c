@@ -6,7 +6,7 @@
 /*   By: tkarri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 17:48:21 by tkarri            #+#    #+#             */
-/*   Updated: 2019/04/06 17:54:51 by tkarri           ###   ########.fr       */
+/*   Updated: 2019/04/12 15:17:24 by tkarri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 			fresh[i] = f(s[i]);
 			i++;
 		}
+		fresh[i] = '\0';
 		return (fresh);
 	}
 	return (NULL);

@@ -6,7 +6,7 @@
 /*   By: tkarri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 17:28:31 by tkarri            #+#    #+#             */
-/*   Updated: 2019/04/08 21:58:10 by tkarri           ###   ########.fr       */
+/*   Updated: 2019/04/12 15:28:53 by tkarri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ char			**ft_strsplit(char const *s, char c)
 	int			start;
 	int			end;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	start = 0;
 	count_words = ft_count_words(s, c);

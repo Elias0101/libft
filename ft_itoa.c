@@ -6,7 +6,7 @@
 /*   By: tkarri <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/06 19:05:10 by tkarri            #+#    #+#             */
-/*   Updated: 2019/04/08 21:34:48 by tkarri           ###   ########.fr       */
+/*   Updated: 2019/04/12 18:49:34 by tkarri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ char			*ft_itoa(int n)
 	}
 	len = ft_intlen(n_copy);
 	str = (char *)malloc(sizeof(char) * (len + 1 + is_minus));
+	if (str == NULL)
+		return (NULL);
 	fill_str(str, len, n_copy, &i);
 	if (is_minus)
 		str[i++] = '-';
